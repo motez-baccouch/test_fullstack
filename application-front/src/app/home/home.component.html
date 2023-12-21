@@ -2,11 +2,12 @@
   <button class="btn btn-secondary float-right" (click)="logout()">Sign out</button>
 
   <div class="container project-form">
-    <form autocomplete="off" class="form-signin">
+    <form autocomplete="off" class="form-signin" (submit)="onSubmit()">
       <h3 class="h3 mb-3 font-weight-normal">Nouveau projet</h3>
       <label class="sr-only">Nom du projet</label>
       <input
-        (keyup)="onInputUpdate($event.target.value, 'name')"
+        [(ngModel)]="projectName"
+        name="projectName"
         type="text"
         class="form-control"
         placeholder="Nom du projet"
@@ -14,7 +15,8 @@
       >
       <label class="sr-only">Montant</label>
       <input
-        (keyup)="onInputUpdate($event.target.value, 'amount')"
+        [(ngModel)]="projectAmount"
+        name="projectAmount"
         type="number"
         class="form-control"
         placeholder="Montant du projet, ex: 999"
@@ -22,7 +24,8 @@
       >
       <label class="sr-only">Description</label>
       <textarea
-        (keyup)="onInputUpdate($event.target.value, 'description')"
+        [(ngModel)]="projectDescription"
+        name="projectDescription"
         rows="3"
         class="form-control"
         placeholder="Description du projet"
@@ -32,7 +35,7 @@
         class="btn btn-lg btn-primary custom-btn btn-block"
         type="submit"
         [disabled]="!formIsValid"
-        (click)="onSubmit()"
+        
       >Créer</button>
     </form>
   </div>
@@ -56,11 +59,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.name }}</td>
+          <td>{{ project.amount }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.ownerUsername }}</td>
+        </tr>
+        <tr *ngIf="projects.length === 0">
+          <td colspan="4">Aucun projet disponible.</td>
         </tr>
       </tbody>
     </table>

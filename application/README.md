@@ -30,3 +30,6 @@ Il y a plusieurs TODOs avec des explications de ce qui est attendu dans le proje
 
 - [ApplicationRouting](src/main/java/com/finalgo/application/api/ApplicationRouting.java)
 - [UserDao](src/main/java/com/finalgo/application/dao/UserDao.java)
+
+### my work
+- j'ai completé les taches , ajouté le password encryption et ajouté les tests de ApplicationRouting

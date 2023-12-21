@@ -1,36 +1,48 @@
 <div class="container text-center center">
   <form autocomplete="off" class="form-signin">
     <h1 class="h3 mb-3 font-weight-normal">Register new account</h1>
+    
+   
     <label class="sr-only">Email address</label>
     <input
-      (keyup)="onInputUpdate($event.target.value, 'email')"
+      [(ngModel)]="email"
+      (ngModelChange)="onInputUpdate($event, 'email')"
+      name="email"
       type="text"
       class="form-control"
       placeholder="Email"
       required
     >
+    
     <label class="sr-only">Username</label>
     <input
-      (keyup)="onInputUpdate($event.target.value, 'username')"
+      [(ngModel)]="username"
+      (ngModelChange)="onInputUpdate($event, 'username')"
+      name="username"
       type="text"
       class="form-control"
       placeholder="Username"
       required
     >
+    
     <label class="sr-only">Password</label>
     <input
-      (keyup)="onInputUpdate($event.target.value, 'password')"
+      [(ngModel)]="password"
+      (ngModelChange)="onInputUpdate($event, 'password')"
+      name="password"
       type="password"
       class="form-control"
       placeholder="Password"
       required
     >
+    
     <button
       class="btn btn-lg btn-primary btn-block"
       type="submit"
       [disabled]="!formIsValid"
       (click)="onSubmit()"
     >Register</button>
+    
     <button
       class="btn btn-lg btn-secondary btn-block"
       type="button"

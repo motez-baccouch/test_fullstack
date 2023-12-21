@@ -8,13 +8,23 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { LeftBarComponent } from './dashboard/leftBar/left-bar.component';
+import { ItemComponent } from './dashboard/item/item.component';
+import { MiddleAreaComponent } from './dashboard/middleArea/middle-area.component';
+import { RightInfoComponent } from './dashboard/rightBar/right-info.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LeftBarComponent,
+    ItemComponent,
+    MiddleAreaComponent,
+    RightInfoComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

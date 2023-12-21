@@ -28,14 +28,22 @@ export class LoginComponent implements OnInit {
     console.log('submit');
     // TODO : Gérer les échecs de connexion
     // Losque les informations ne sont pas bonnes et que le backend renvoie une erreur,
-    // Il faut afficher le bon message d'erreur avec une alerte via `Swal`
+    // Il faut afficher le bon message d'erreur avec une alerte via `Swal` :done!!
     const loginParams = { username: this.username, password: this.password };
     this.applicationService.login(loginParams).subscribe((user) => {
       sessionStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/home']);
-      Swal.fire('Connexion réussie', 'Vous êtes à présent connecté', 'success');
+      Swal.fire({
+        icon: 'success', 
+        title: 'Connexion réussie',
+        text: 'Vous êtes à présent connecté'});
     }, (err) => {
         console.error(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Échec de la connexion',
+          text: 'Vos informations de connexion ne sont pas valides. Veuillez réessayer.',
+        });
     });
   }
 

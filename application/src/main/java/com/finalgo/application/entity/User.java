@@ -2,11 +2,10 @@ package com.finalgo.application.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import org.mindrot.jbcrypt.BCrypt;
+
 
 @Entity
 public class User implements Serializable {
@@ -16,7 +15,8 @@ public class User implements Serializable {
     private Integer id;
 
     private String username;
-    @JsonIgnore
+
+    @Column(length = 120)
     private String password;
     private String email;
 
