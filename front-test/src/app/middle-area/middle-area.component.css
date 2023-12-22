@@ -1,0 +1,10 @@
+#main {
+    transition: margin-right .5s;
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+.right-bar{
+    border-radius: 15px 0 0 15px !important;
+    border: 0px;
+}

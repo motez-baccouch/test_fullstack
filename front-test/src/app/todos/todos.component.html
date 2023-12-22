@@ -1,0 +1,20 @@
+@if (todos) {
+<div [class.disabled]="!todos.selected">
+    <div class="overlay"></div>
+    <h5>{{todos.title}}</h5>
+    <div class="card">
+        <div class="card-body card-border container">
+            <div class="row">
+                @for (todo of todos.todos; track todo.id) {
+                <div class="col container text-center">
+                    <div class="todo-item">
+                        <img [src]="getImg(todo)" style="width: 90px; height: 90px;" />
+                        <div class="overlay-text" (click)="handleSelectTodo(todo)" data-bs-toggle="offcanvas" data-bs-target="#info">{{ todo.title }}</div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,18 @@
+.bar {
+    width: 250px;
+    height: 100vh;
+    border-radius: 0 15px 15px 0;
+    margin-right: 2rem;
+}
+
+.small-bar {
+    width: 4.5rem;
+}
+
+.selected {
+    color: black !important;
+}
+
+.item {
+    color: gray;
+}

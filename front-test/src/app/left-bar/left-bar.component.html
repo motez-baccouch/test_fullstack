@@ -1,0 +1,33 @@
+<div class="d-none d-md-flex flex-column flex-shrink-0 p-3 bg-light bar">
+    <div class="fs-4 d-flex align-items-center mb-1 justify-content-center">
+        <i class="bi bi-highlights me-2"></i>
+        Todos
+    </div>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        @for (item of todoLists; track item.id) {
+        <li class="nav-item">
+            <a href="#" class="nav-link item" [class.selected]="item.selected" (click)="handleSelectList(item.id)">
+                <i [class]="item.icon" class="mr-2"></i>
+                {{ item.title }}
+            </a>
+        </li>
+        }
+    </ul>
+</div>
+
+<div class="d-flex d-md-none flex-column flex-shrink-0 bg-light bar small-bar">
+    <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
+        data-bs-placement="right" data-bs-original-title="Icon-only">
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        @for (item of todoLists; track item.id) {
+        <li class="nav-item">
+            <a href="#" class="nav-link py-3 border-bottom" [class.selected]="item.selected" (click)="handleSelectList(item.id)" aria-current="page"
+                title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <i [class]="item.icon" class="mr-2"></i>
+            </a>
+        </li>
+        }
+    </ul>
+</div>
