@@ -21,3 +21,7 @@
 Indiquer ici le temps passé pour réaliser ce test, il sera pris en compte lors de la review du code : 
 
 N'y passez pas plus de 4h, si vous n'avez pas terminé vous pouvez nous envoyer ce que avez réussi à faire
+
+j'ai pris environ 6 heures car j'ai ajouté quelques fonctionalités et car le projet angular est un peu ancien donc j'ai pris un peu de temps a telecharger et trouver la bonne version de node .
+
+a propos du test front il est dans le dossier front-test , je vais envoyez le docker image pour la tester .
